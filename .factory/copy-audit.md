@@ -68,7 +68,7 @@ the screen says what the CLI does and points directly to the sample.
 | --- | ---: | --- |
 | Optional Team policy pack | 4 | — |
 | Start shared review policy faster | 5 | — |
-| Get maintained templates for monorepos, database apps, and public APIs. | 10 | — |
+| Get three templates for monorepos, database apps, and public APIs. | 10 | — |
 | The free CLI keeps analysis, Markdown, JSON, and custom rules. | 10 | — |
 | Buy Team pack — hosted checkout | 6 | — |
 | Sociobot is the merchant of record. | 6 | — |

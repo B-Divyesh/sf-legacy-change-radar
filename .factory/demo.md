@@ -9,6 +9,9 @@ The landing-page action opens the browser demo in one click. The CLI command
 creates a unique temporary directory, copies the bundled sample there, runs the
 real analyzer, and prints both report and temporary path.
 
+The browser playback is mirrored in the self-hosted asciinema v2 file
+`site/public/demo.cast`. No external player or CDN is loaded.
+
 ## Sample data
 
 `examples/harbor-app` contains a small harbor operations application, CODEOWNERS,

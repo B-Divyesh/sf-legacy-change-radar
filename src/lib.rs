@@ -549,19 +549,24 @@ fn find_required_checks(
         });
     }
     for rule in &config.checks {
+        let mut trigger = None;
         for file in files {
-            if rule
-                .paths
-                .iter()
-                .any(|pattern| path_matches(pattern, &file.path).unwrap_or(false))
-            {
-                checks.insert(RequiredCheck {
-                    name: rule.name.clone(),
-                    triggered_by: file.path.clone(),
-                    reason: rule.reason.clone(),
-                });
+            for pattern in &rule.paths {
+                if path_matches(pattern, &file.path)? {
+                    trigger = Some(file.path.clone());
+                    break;
+                }
+            }
+            if trigger.is_some() {
                 break;
             }
+        }
+        if let Some(triggered_by) = trigger {
+            checks.insert(RequiredCheck {
+                name: rule.name.clone(),
+                triggered_by,
+                reason: rule.reason.clone(),
+            });
         }
     }
     Ok(checks.into_iter().collect())

@@ -150,10 +150,11 @@ fn render(report: &legacy_change_radar::Report, format: OutputFormat) -> Result<
 }
 
 fn write_output(path: &Path, contents: &str) -> Result<()> {
-    if let Some(parent) = path.parent() {
-        if !parent.as_os_str().is_empty() {
-            fs::create_dir_all(parent)?;
-        }
+    if let Some(parent) = path
+        .parent()
+        .filter(|parent| !parent.as_os_str().is_empty())
+    {
+        fs::create_dir_all(parent)?;
     }
     fs::write(path, contents).with_context(|| format!("could not write {}", path.display()))
 }

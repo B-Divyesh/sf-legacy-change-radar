@@ -2,6 +2,7 @@
 name = "legacy-change-radar"
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.85"
 description = "Map a code change's owners, dependencies, and review checks"
 license = "MIT"
 repository = "https://github.com/B-Divyesh/sf-legacy-change-radar"

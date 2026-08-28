@@ -86,7 +86,7 @@ supports `*`, `**`, and `?`.
 ## Team policy pack
 
 The free CLI includes analysis, Markdown, JSON, and custom repository rules.
-The optional Team policy pack costs **$29 once**. It adds maintained policy
+The optional Team policy pack costs **$29 once**. It adds three policy
 templates for monorepos, database applications, and public API services. Buy or
 restore it on the product site. Sociobot is the merchant of record.
 

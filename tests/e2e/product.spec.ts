@@ -73,6 +73,9 @@ test("@claim:one-click-demo opens a used sample and downloads its card", async (
   await page.getByRole("button", { name: "Download sample card" }).click();
   const download = await downloadPromise;
   expect(download.suggestedFilename()).toBe("legacy-change-radar-sample.md");
+  await page.goto("/?demo=1");
+  await expect(page).toHaveTitle("Demo — Legacy Change Radar");
+  await expect(page.getByText("Demo — sample data, nothing is saved")).toBeVisible();
 });
 
 test("@claim:team-pack verifies a license and provides three templates", async ({ page }) => {
@@ -80,6 +83,8 @@ test("@claim:team-pack verifies a license and provides three templates", async (
     await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ valid: true, reason: "ok", expires_at: null }) });
   });
   await page.goto("/");
+  await expect(page.getByLabel("29 US dollars, one time")).toBeVisible();
+  await expect(page.getByRole("link", { name: /Buy Team pack/ })).toHaveAttribute("href", "https://api.sociobot.in/api/v1/products/legacy-change-radar/checkout");
   await page.getByLabel("Have a license? Paste it here.").fill("test-license");
   await page.getByRole("button", { name: "Verify license" }).click();
   await expect(page.getByText("License active. Team policy templates are ready.")).toBeVisible();

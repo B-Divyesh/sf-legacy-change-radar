@@ -2,8 +2,34 @@
   "slug": "legacy-change-radar",
   "title": "Legacy Change Radar",
   "summary": "Map a code change's owners, dependencies, and review checks.",
+  "territory": "devtools-data",
+  "user": "Maintainers reviewing agent-authored changes in large established applications who need to find changed dependency and risk surfaces before line-by-line review.",
+  "evidence": [
+    {
+      "url": "https://hn.algolia.com/api/v1/items/49045271",
+      "date": "2026-07-25",
+      "quote_or_summary": "An Ask HN poster asks how to harden agentic changes to a 15-year-old, 1M+ line SaaS before review."
+    },
+    {
+      "url": "https://github.com/openai/codex/issues/2998",
+      "date": "2025-08-31",
+      "quote_or_summary": "A 226-reaction Codex request wants IDE-integrated red/green diffs and approval rather than terminal-only change review."
+    }
+  ],
+  "recurrence": "One large-codebase safety request and strong demand for better change approval point to review context, not code generation, as the bottleneck.",
+  "current_workaround": "Read raw diffs, run broad CI, ask the author for context, and discover touched configuration or generated artifacts late.",
+  "incumbents_and_gap": "GitHub/GitLab review and IDE diff views show changed lines; CodeQL and CI run checks. They do not summarize blast radius across ownership, migrations, public APIs, and configuration as a compact review appendix.",
+  "smallest_useful_product": "A CI CLI that turns a git diff into a Markdown risk card: affected owners, dependency edges, config/migration/API markers, and required named checks.",
+  "success_measure": "In 30 pilot pull requests, reviewers identify a relevant non-line-level risk in at least 20% and do not increase median review time by more than five minutes.",
   "artifact_class": "cli",
-  "monetization": "freemium",
+  "monetization": "freemium — local analysis can be open; hosted policy/ownership integrations are team value.",
+  "constraints": "Run repository-local; explain every inferred edge; never claim a risk score proves correctness; support language adapters incrementally.",
+  "est_build_effort": "M",
+  "why_distinct": "It creates a reviewable blast-radius artifact rather than another AI reviewer or diff viewer.",
+  "confidence": 4,
+  "state": "BUILT",
   "build_command": "npm run build",
-  "deploy": { "dist_dir": "dist/site" }
+  "deploy": {
+    "dist_dir": "dist/site"
+  }
 }

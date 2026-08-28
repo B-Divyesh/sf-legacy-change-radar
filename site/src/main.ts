@@ -171,7 +171,7 @@ legacy-change-radar scan --base origin/main</code></pre>
       <div class="paid-copy">
         <p class="eyebrow">Optional Team policy pack</p>
         <h2 id="paid-title">Start shared review policy faster</h2>
-        <p>Get maintained templates for monorepos, database apps, and public APIs.</p>
+        <p>Get three templates for monorepos, database apps, and public APIs.</p>
         <p>The free CLI keeps analysis, Markdown, JSON, and custom rules.</p>
         <a class="button secondary" href="${CHECKOUT_URL}">Buy Team pack — hosted checkout <span aria-hidden="true">↗</span></a>
         <p class="merchant-note">Sociobot is the merchant of record. Refunds revoke the license.</p>
@@ -239,6 +239,7 @@ function demoPage(): string {
       <div class="demo-controls" aria-label="Demo controls">
         <button class="button quiet" type="button" data-replay-demo>Replay terminal</button>
         <button class="button quiet" type="button" data-download-card>Download sample card</button>
+        <a class="button quiet" href="/demo.cast" download>Download recording</a>
       </div>
     </section>
     <section class="demo-workbench section-shell" aria-labelledby="workbench-title">
@@ -305,7 +306,7 @@ function termsPage(): string {
       <h2>No correctness promise</h2>
       <p>The report is an aid for human review. It can miss owners, edges, markers, and required checks.</p>
       <h2>Team policy pack</h2>
-      <p>The Team policy pack costs $29 once. One purchase covers one team and its repositories.</p>
+      <p>The Team policy pack costs $29 once. A valid license shows its three template downloads.</p>
       <p>Sociobot is the merchant of record. Refunds are handled there and revoke the related license.</p>
       <h2>Acceptable use</h2>
       <p>Do not use the product to break laws or access repositories without permission.</p>
