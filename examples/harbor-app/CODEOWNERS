@@ -1,0 +1,3 @@
+/src/routes/ @api-maintainers
+/migrations/ @data-platform @database-reviewers
+/config/ @platform-ops

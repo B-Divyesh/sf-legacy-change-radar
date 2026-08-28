@@ -1,0 +1,8 @@
+[[checks]]
+name = "harbor-contract-tests"
+paths = ["src/routes/**"]
+reason = "A public harbor route changed."
+
+[[owners]]
+pattern = "src/billing/**"
+names = ["@revenue-systems"]

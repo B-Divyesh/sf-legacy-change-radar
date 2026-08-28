@@ -1,0 +1,28 @@
+diff --git a/src/routes/berths.ts b/src/routes/berths.ts
+index 5847bbc..782fd91 100644
+--- a/src/routes/berths.ts
++++ b/src/routes/berths.ts
+@@ -1,5 +1,7 @@
+ import { berthStore } from "../stores/berths";
+ 
+-export async function listBerths() {
+-  return berthStore.available();
++export async function listBerths(minimumDepthCm = 240) {
++  return berthStore.available().filter((berth) =>
++    berth.depthCm >= minimumDepthCm
++  );
+ }
+diff --git a/migrations/20260828_add_berth_depth.sql b/migrations/20260828_add_berth_depth.sql
+new file mode 100644
+index 0000000..c75bf31
+--- /dev/null
++++ b/migrations/20260828_add_berth_depth.sql
+@@ -0,0 +1 @@
++ALTER TABLE berths ADD COLUMN depth_cm INTEGER;
+diff --git a/config/harbor.toml b/config/harbor.toml
+index 242e2d1..76abe10 100644
+--- a/config/harbor.toml
++++ b/config/harbor.toml
+@@ -1 +1 @@
+-minimum_depth_cm = 180
++minimum_depth_cm = 240

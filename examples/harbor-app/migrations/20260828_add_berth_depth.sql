@@ -1,0 +1,1 @@
+ALTER TABLE berths ADD COLUMN depth_cm INTEGER;

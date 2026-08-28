@@ -1,0 +1,27 @@
+[package]
+name = "legacy-change-radar"
+version = "0.1.0"
+edition = "2024"
+description = "Map a code change's owners, dependencies, and review checks"
+license = "MIT"
+repository = "https://github.com/B-Divyesh/sf-legacy-change-radar"
+readme = "README.md"
+keywords = ["git", "code-review", "cli", "dependencies"]
+categories = ["command-line-utilities", "development-tools"]
+include = ["src/**", "examples/**", "Cargo.toml", "README.md", "LICENSE", "CHANGELOG.md"]
+
+[[bin]]
+name = "legacy-change-radar"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.5", features = ["derive"] }
+globset = "0.4"
+regex = "1.11"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.9"
+
+[dev-dependencies]
+tempfile = "3.20"

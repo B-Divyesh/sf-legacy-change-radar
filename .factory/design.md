@@ -79,8 +79,9 @@ immediately; smooth scrolling and transforms are removed.
   parchment, deep forest-green ink, small ochre observation ticks, spacious
   asymmetrical composition, scientific engraving with light risograph texture,
   no words, no letters, no logos, no watermark.” The selected source is stored
-  in `site/public/art/`; the WebP derivative is capped at 300 KB. The model and
-  generation date are recorded after generation.
+  under `.factory/provenance/`; the WebP derivative is capped at 300 KB.
+  Generated 2026-08-28 with deployment `factory-image`, high quality,
+  1536×1024. The exact prompt and settings are stored beside the source.
 - Open Graph image: composed locally from the same original art with HTML/CSS,
   then captured at 1200×630. It adds live text outside the raster image.
 - Favicon and wordmark: hand-made SVG using a simple leaf/root silhouette. They
