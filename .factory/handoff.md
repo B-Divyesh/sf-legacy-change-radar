@@ -1,4 +1,44 @@
-# Legacy Change Radar — build handoff
+# Legacy Change Radar — verification handoff
+
+## Independent verification verdict: FAIL
+
+**Tested candidate:** `2e4ea3accbb9a5e2bbae63476fe3b0b07df1f96a`
+**Tested deployment:** https://legacy-change-radar.sociobot.in
+**Verified:** 2026-08-28 UTC
+
+Do not release this candidate. The live JavaScript and CSS hashes exactly
+match the locally built candidate, so the failures below are present in the
+deployed product rather than a stale deployment.
+
+### Release-blocking defects
+
+1. Every exact command in `.factory/claims.json` fails from a clean checkout:
+   the risk-card test cannot find `target/debug/legacy-change-radar`, and the
+   three browser claim commands start `vite preview` without building
+   `dist/site`, rendering a blank page. `npm test` consequently fails with the
+   same missing binary (1 failed / 8 passed E2E tests).
+2. The live “Buy Team pack” checkout URL returns HTTP 404:
+   `https://api.sociobot.in/api/v1/products/legacy-change-radar/checkout`
+   returned `{"error":"enabled factory product","status":404}`. The paid
+   product cannot be purchased.
+3. Axe 4.10.2 reports serious `scrollable-region-focusable` violations on the
+   390px live home page for the terminal-result and install-command `<pre>`
+   regions. Keyboard users cannot access horizontally overflowed text.
+
+### Other defects
+
+- Two visitor-facing promises lack `claims.json` coverage: “Every edge
+  includes evidence and a reason” and the Rust 1.85 requirement.
+- Hashed production assets are served with only `max-age=30`, not immutable
+  long-lived caching.
+- A nonexistent live path renders the intended screen but returns HTTP 200,
+  not a real 404 status.
+
+See `.factory/verification.md` for command output, full evidence, successful
+checks, and reproduction steps. This independent result supersedes the
+earlier build handoff’s claim of a passing `npm test`/claim suite.
+
+---
 
 ## What shipped
 
