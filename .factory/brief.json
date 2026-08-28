@@ -1,0 +1,9 @@
+{
+  "slug": "legacy-change-radar",
+  "title": "Legacy Change Radar",
+  "summary": "Map a code change's owners, dependencies, and review checks.",
+  "artifact_class": "cli",
+  "monetization": "freemium",
+  "build_command": "npm run build",
+  "deploy": { "dist_dir": "dist/site" }
+}
