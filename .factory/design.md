@@ -24,7 +24,7 @@ terminal theme.
 | `--fern` | `#245C43` | links, primary actions, positive state |
 | `--fern-dark` | `#143D2C` | action hover and terminal shell |
 | `--lichen` | `#B9C39A` | quiet highlights |
-| `--ochre` | `#9B5D18` | warnings and annotation marks |
+| `--ochre` | `#74400D` | warnings and annotation marks |
 | `--rust` | `#8B3528` | errors and high-attention markers |
 | `--white` | `#FFFDF5` | contrast text and lifted paper |
 

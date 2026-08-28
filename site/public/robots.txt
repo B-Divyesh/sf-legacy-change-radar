@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://legacy-change-radar.sociobot.in/sitemap.xml

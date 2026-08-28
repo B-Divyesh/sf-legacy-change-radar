@@ -1,0 +1,30 @@
+[
+  {
+    "id": "risk-card",
+    "claim": "Maps a Git diff to owners, dependency edges, change markers, and named checks in Markdown or JSON.",
+    "where": "landing preview, README",
+    "test": "npm run test:e2e -- --grep @claim:risk-card",
+    "sandbox": "bundled harbor-app repository and sample.diff; run the compiled CLI and assert report content"
+  },
+  {
+    "id": "local-private",
+    "claim": "The CLI uploads no source or telemetry, and demo data is not saved.",
+    "where": "landing facts, demo banner, privacy, README",
+    "test": "npm run test:e2e -- --grep @claim:local-private",
+    "sandbox": "fresh browser context; record every request and storage key; inspect the compiled dependency surface"
+  },
+  {
+    "id": "one-click-demo",
+    "claim": "One click opens a populated sample risk card that can be downloaded.",
+    "where": "landing primary action, demo",
+    "test": "npm run test:e2e -- --grep @claim:one-click-demo",
+    "sandbox": "fresh browser context at /; open /demo and download the bundled sample card"
+  },
+  {
+    "id": "team-pack",
+    "claim": "A valid $29 one-time license provides three Team policy templates.",
+    "where": "landing paid section, README, terms",
+    "test": "npm run test:e2e -- --grep @claim:team-pack",
+    "sandbox": "fresh browser context with a recorded valid Sociobot verification response"
+  }
+]

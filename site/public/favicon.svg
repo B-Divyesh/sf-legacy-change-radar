@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Legacy Change Radar fern mark">
+  <rect width="64" height="64" rx="8" fill="#f2ead5"/>
+  <path d="M32 54V13M32 22c-8-9-16-5-17-2 7 0 12 3 17 8M32 30c9-10 17-6 18-3-7 0-13 3-18 9M32 38c-7-7-13-4-15-1 6 0 10 2 15 7" fill="none" stroke="#245c43" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="54" r="3" fill="#9b5d18"/>
+</svg>

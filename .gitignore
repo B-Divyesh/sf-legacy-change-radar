@@ -3,5 +3,7 @@
 /dist/
 /test-results/
 /playwright-report/
+/.factory/evidence/
+/graphify-out/
 *.crate
 .DS_Store
